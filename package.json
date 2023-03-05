@@ -1,0 +1,19 @@
+{
+  "name": "line-messaging-api-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuma-ito-bd/line-messaging-api-bot.git"
+  },
+  "author": "Yuma Ito",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yuma-ito-bd/line-messaging-api-bot/issues"
+  },
+  "homepage": "https://github.com/yuma-ito-bd/line-messaging-api-bot#readme"
+}
