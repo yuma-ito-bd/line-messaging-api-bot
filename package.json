@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/yuma-ito-bd/line-messaging-api-bot/issues"
   },
-  "homepage": "https://github.com/yuma-ito-bd/line-messaging-api-bot#readme"
+  "homepage": "https://github.com/yuma-ito-bd/line-messaging-api-bot#readme",
+  "dependencies": {
+    "node-jose": "^2.2.0"
+  }
 }
