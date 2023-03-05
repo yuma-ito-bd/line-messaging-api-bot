@@ -18,5 +18,8 @@
   "homepage": "https://github.com/yuma-ito-bd/line-messaging-api-bot#readme",
   "dependencies": {
     "node-jose": "^2.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
   }
 }
