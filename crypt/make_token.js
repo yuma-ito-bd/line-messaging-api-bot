@@ -19,7 +19,7 @@ const makeJWT = async () => {
     iss: process.env.CHANNEL_ID, // チャネルID
     sub: process.env.CHANNEL_ID, // チャネルID
     aud: "https://api.line.me/",
-    exp: Math.floor(new Date().getTime() / 1000) + 60 * 30, // JWTの有効期間（UNIX時間）
+    exp: Math.floor(new Date().getTime() / 1000) + 60 * 25, // JWTの有効期間（UNIX時間）
     token_exp: 60 * 60 * 24 * 30, // チャネルアクセストークンの有効期間
   };
 
