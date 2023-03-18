@@ -5,6 +5,10 @@ import {getFirestore} from "firebase-admin/firestore";
 initializeApp();
 const db = getFirestore();
 
+export const webhook = https.onRequest((req, res) => {
+  res.send("HTTP POST request sent to the webhook URL!");
+});
+
 // Take the text parameter passed to this HTTP endpoint and insert it into
 // Firestore under the path /messages/:documentId/original
 export const addMessage = https.onRequest(async (req, res) => {
