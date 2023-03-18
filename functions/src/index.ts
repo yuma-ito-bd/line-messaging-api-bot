@@ -1,6 +1,8 @@
 import {https, logger} from "firebase-functions";
 import {defineString} from "firebase-functions/params";
-import {WebhookRequestBody, Client} from "@line/bot-sdk";
+import {
+  Client, SignatureValidationFailed, validateSignature, WebhookRequestBody,
+} from "@line/bot-sdk";
 
 // 実行時に必要なパラメータを定義
 const config = {
@@ -11,9 +13,16 @@ const config = {
 export const webhook = https.onRequest((req, res) => {
   res.send("HTTP POST request sent to the webhook URL!");
 
+  // 署名の検証
+  const channelSecret = config.channelSecret.value();
+  const signature = req.header("x-line-signature") ?? "";
+  if (!validateSignature(req.rawBody, channelSecret, signature)) {
+    throw new SignatureValidationFailed("invalid signature");
+  }
+
   // LINE Messaging API Clientの初期化
   const lineClient = new Client({
-    channelSecret: config.channelSecret.value(),
+    channelSecret: channelSecret,
     channelAccessToken: config.channelAccessToken.value(),
   });
 
